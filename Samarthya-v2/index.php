@@ -653,8 +653,16 @@ if(!isset($_SESSION[constant("SESSION_USER_USERNAME")]))
    <div class="row">
       <div class="col-md-7 featurette">
          <h2 class="featurette-heading"><span class="text-muted">About</span> MGNREGA</h2>
-         <p>The National Rural Employment Guarantee Act 2005 (or, NREGA No 42) was later renamed as the "Mahatma Gandhi National Rural Employment Guarantee Act" (or, MGNREGA), is an Indian labour law and social security measure that aims to guarantee the 'right to work'. It aims to ensure livelihood security in rural areas by providing at least 100 days of wage employment in a financial year to every household whose adult members volunteer to do unskilled manual work.It is one of the important scheme being implemented by government to achive inclusive growth.
-</p>
+          <p>
+             The National Rural Employment Guarantee Act (Mahatma Gandhi NREGA) notified 
+             on September 7, 2005, aims at enhancing livelihood security of households in rural 
+             areas of the country by providing at least one hundred days of guaranteed wage 
+             employment in a financial year to every household whose adult members volunteer 
+             to do unskilled manual work. The Act covers all rural districts of the country.
+         </p>
+         <a href="about-us.php">
+         <p style="color:#FE9A2E" class="pull-right">Read More..</p>
+         </a>
       </div>
       <div class="col-md-5"><img class="featurette-image img-responsive center-block" src="images/homepage-img.jpg" alt="About Image"></div>
    </div>
