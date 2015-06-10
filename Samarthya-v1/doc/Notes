@@ -1,0 +1,30 @@
+======================================
+DATABASE SCHEMA
+======================================
+TABLES:
+--------------
+USER PROFILES
+--------------
+ 1) User Registration
+ 2) User Login
+-----------------------
+COURSES AND ITS TOPICS
+-----------------------
+ 3) Courses
+ 4) Course Links (Topics)
+------------------------
+EXAMS AND ITS QUESTIONS
+------------------------
+ 5) Test Details
+ 6) Test Questions
+------------------------
+RESULTS AND ITS STORAGE
+------------------------
+ 7) Test Results
+ 8) User Course Test
+-------------------
+USER ACTIVITY LOGS
+-------------------
+ 9) User Visited Courses
+10) Course User View
+
