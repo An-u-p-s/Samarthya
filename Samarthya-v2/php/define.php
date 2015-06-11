@@ -8,7 +8,7 @@
  */
 /* DATABASE CREDIENTIALS */
 define("SERVER_NAME","localhost:3306", true);//define()is to declare constats .
-define("DB_NAME","olpportal_v1", true);
+define("DB_NAME","olpportal_v2", true);
 define("DB_USER","root", true);
 define("DB_PASSWORD","@anupanup123", true);
 
