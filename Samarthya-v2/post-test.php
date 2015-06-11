@@ -41,7 +41,34 @@
         var q_quesId=[];
         function submitAnswers()
         {
+            popupOpen();
+            var courseName='<?php if(isset($_SESSION[constant("SESSION_COURSENAME")])) echo $_SESSION[constant("SESSION_COURSENAME")]; ?>'; 
+            var courseId='<?php if(isset($_SESSION[constant("SESSION_COURSEID")])) echo $_SESSION[constant("SESSION_COURSEID")]; ?>'; 
+             
+            var resdetails="";
+                                $.ajax({type: "GET", 
+                                                   async: false,
+                                                   url: 'php/sessions.php',
+                                                   data: { 
+                                                       action : 'SetCourseSession',
+                                                       courseName : courseName,
+                                                       courseId : courseId
+                                                   },
+                                                   success: function(resp)
+                                                   {
+                                                         resdetails=resp;
+                                                   }
+                                                  });
+            
+            var popupcontent='You have completed your Post-Test';
+            popupcontent+='<br/>';
+            popupcontent+='<a href="user-landing.php">';
+            popupcontent+='<input type="button" class="btn btn-warning" value="Go to Home-Page and Choose a Course"/>';
+             popupcontent+='</a>';
+            document.getElementById("popcontent").innerHTML=popupcontent;
             document.getElementById("submitButton").style.display='none';
+            document.getElementById("PopupAudioCloseButton").style.display='none';
+             
             answerpicker();
             console.log("q_quesId : "+q_quesId);
             console.log("q_answer : "+JSON.stringify(q_answer));
@@ -51,7 +78,7 @@
                                     url: 'php/dac.questions.php',
                                     data: { 
                                         action : 'SendAnswers',
-                                        testType :'Assessment',
+                                        testType :'Post Test',
                                         questions : q_quesId,
                                         answers : JSON.stringify(q_answer)
                                     },
@@ -61,14 +88,8 @@
                                     }
                                    });
                console.log("answers : "+result);
-              
-              document.getElementById("PopupAudioCloseButton").style.display='none';
-              popupOpen();
-              var content='You have completed Assessment<br/>';
-              content+='<a href="post-test.php"><input type="button" class="btn btn-warning" value="Go for Post-Test"/></a>';
-              document.getElementById("popcontent").innerHTML=content;
                
-           // window.location.href='post-test.php';
+          //  window.location.href='previous-test-results.php';
         }
          
             
@@ -187,7 +208,7 @@
             if(q_cindex<q_lindex)
             {
                 document.getElementById("qtest-question").innerHTML=q_json[q_cindex].question;
-            
+               console.log("q_cindex : "+q_cindex);
                 q_qId=q_json[q_cindex].idTestQuestions;
                 q_quesId.push(q_qId);
              //  console.log("QuestionId "+q_json[q_cindex].idTestQuestions);
@@ -256,7 +277,7 @@
                                     url: 'php/dac.questions.php',
                                     data: { 
                                         action : 'TestDetails',
-                                        testType:'Assessment',
+                                        testType:'Post Test',
                                         courseName : courseName
                                     },
                                     success: function(resp)
@@ -309,8 +330,11 @@
                                     }
                                    });
                   console.log("result : "+qres); 
+                  // q_json=qres;
                   q_json=JSON.parse(qres);
                   q_lindex=q_json.length;
+                  console.log("Total Questions : "+q_lindex);
+                  console.log("Question Id : "+q_json[0].idTestQuestions);
         }
     </script>
   </head>
@@ -346,7 +370,7 @@
             <span class="icon-bar"></span>
          </button>
       </div>
-      <!-- NAVIGATION BAR -->
+       <!-- NAVIGATION BAR -->
             <!-- Start Navigation -->
             <?php $page='';
             include 'templates/Navigation.php';?>
@@ -364,10 +388,10 @@
 <h3 class="featurette-heading">COURSE-1:
     <span class="text-muted">
     <?php if(isset($_SESSION[constant("SESSION_COURSENAME")])) echo $_SESSION[constant("SESSION_COURSENAME")]; ?> 
-        (ASSESSMENT)
+        (POST TEST)
     </span>
    
-    <div id="countdowntimer" class="time-left pull-right">Time Left: <span id="future_date" class="text-muted"></span></div></h3>
+    <div id="countdowntimer" class="time-left pull-right">Time Left: <span id="future_date" class="text-muted">00:00 Hrs</span></div></h3>
       <hr class="featurette-divider">
 </div>
 </div>
