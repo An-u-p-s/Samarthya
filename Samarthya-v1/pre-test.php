@@ -208,7 +208,7 @@
             if(q_cindex<q_lindex)
             {
                 document.getElementById("qtest-question").innerHTML=q_json[q_cindex].question;
-            
+               console.log("q_cindex : "+q_cindex);
                 q_qId=q_json[q_cindex].idTestQuestions;
                 q_quesId.push(q_qId);
              //  console.log("QuestionId "+q_json[q_cindex].idTestQuestions);
@@ -330,8 +330,11 @@
                                     }
                                    });
                   console.log("result : "+qres); 
+                  // q_json=qres;
                   q_json=JSON.parse(qres);
                   q_lindex=q_json.length;
+                  console.log("Total Questions : "+q_lindex);
+                  console.log("Question Id : "+q_json[0].idTestQuestions);
         }
     </script>
   </head>

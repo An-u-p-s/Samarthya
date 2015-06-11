@@ -1,6 +1,6 @@
 <?php session_start();
  require 'php/define.php';
- if(isset($_SESSION[constant("SESSION_USER_USERNAME")]) && isset($_SESSION[constant("SESSION_COURSENAME")]))
+ if(isset($_SESSION[constant("SESSION_USER_USERNAME")]))
  {
 ?>
 <!DOCTYPE html>
@@ -342,11 +342,42 @@
             <span class="icon-bar"></span>
          </button>
       </div>
-      <!-- NAVIGATION BAR -->
-            <!-- Start Navigation -->
-            <?php $page='';
-            include 'templates/Navigation.php';?>
-            <!-- End Navigation -->
+      <div id="navbar" class="navbar-collapse collapse">
+         <ul class="nav navbar-nav">
+                <li><a href="user-landing.php">Home</a></li>
+                <?php   if($_SESSION[constant("SESSION_USER_USERNAME")]=='Administrator') { ?>
+                <li><a href="user-details.php">User Details</a></li>
+                <li><a href="user-history.php">User History</a></li>
+                <li><a href="admin-test-results.php">User Test Results</a></li>
+                <?php } else { ?>
+                <li><a href="previous-test-results.php">Test Results</a></li>
+                <?php  } ?>
+
+                <?php   if($_SESSION[constant("SESSION_USER_USERNAME")]=='Administrator') { ?>
+                <li class="active"><a href="manage-courses.php">Manage Courses</a></li>
+                <li><a href="manage-onlinetest.php">Manage Tests</a></li>
+                <?php } else {?>
+                 <li><a href="visited-courses.php">Visited Courses</a></li>
+                <?php  } ?>
+         </ul>
+         <ul class="nav navbar-nav navbar-right right-margin">
+                     <li class="user-info">Welcome  
+                         <span class="user-name">
+                              <?php if(isset($_SESSION[constant("SESSION_USER_USERNAME")])) echo $_SESSION[constant("SESSION_USER_USERNAME")]; ?>
+                         </span>
+                     </li>
+         <li><a href="#">Logout</a></li>
+            <li class="active dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false"><span class="icon-cog"></span>Settings<span class="caret"></span></a>
+                 <ul class="dropdown-menu" role="menu" data-toggle="dropdown">
+                    <li class="mychangedrop">
+                         <a href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+                           <?php include 'templates/changePassword.php';?>
+                         </a>
+                    </li>
+                 </ul>
+            </li>
+         </ul>
+      </div>
    </div>
 </nav>
 

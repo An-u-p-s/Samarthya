@@ -653,7 +653,7 @@ if(!isset($_SESSION[constant("SESSION_USER_USERNAME")]))
    <div class="row">
       <div class="col-md-7 featurette">
          <h2 class="featurette-heading"><span class="text-muted">About</span> MGNREGA</h2>
-         <p>
+          <p>
              The National Rural Employment Guarantee Act (Mahatma Gandhi NREGA) notified 
              on September 7, 2005, aims at enhancing livelihood security of households in rural 
              areas of the country by providing at least one hundred days of guaranteed wage 

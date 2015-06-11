@@ -61,8 +61,14 @@
                                     }
                                    });
                console.log("answers : "+result);
+              
+              document.getElementById("PopupAudioCloseButton").style.display='none';
+              popupOpen();
+              var content='You have completed Assessment<br/>';
+              content+='<a href="post-test.php"><input type="button" class="btn btn-warning" value="Go for Post-Test"/></a>';
+              document.getElementById("popcontent").innerHTML=content;
                
-            window.location.href='previous-test-results.php';
+           // window.location.href='post-test.php';
         }
          
             
