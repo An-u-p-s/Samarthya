@@ -42,9 +42,24 @@
          }
          
          
-         function moduleContent()
+         function moduleContent(courseName, courseId)
          {
-             document.getElementById("userlanding-content").style.display='none';
+             var result="";
+                                $.ajax({type: "GET", 
+                                                   async: false,
+                                                   url: 'php/sessions.php',
+                                                   data: { 
+                                                       action : 'SetCourseSession',
+                                                       courseName : courseName,
+                                                       courseId : courseId
+                                                   },
+                                                   success: function(resp)
+                                                   {
+                                                         result=resp;
+                                                   }
+                                                  });
+            // document.getElementById("userlanding-content").style.display='none';
+            window.location.href='details.php?content=No';
          }
         function getCoursesListAfterLogin()
         {
@@ -81,7 +96,7 @@
                                  content+='<li><span class="course-subTag" onclick="javascript:preTestforCourse(\''+res[index].courseName+'\',\''+res[index].idCourses+'\',\'preTest\' )">';
                                  content+='Take a Pretest</span></li>';
                                  content+='<li><span class="course-subTag" onclick="javascript:preTestforCourse(\''+res[index].courseName+'\',\''+res[index].idCourses+'\',\'Details\' )">Details</a></li>';
-                                 content+='<li><span class="course-subTag" onclick="javascript:moduleContent()">Go to Module</a></li>';
+                                 content+='<li><span class="course-subTag" onclick="javascript:moduleContent(\''+res[index].courseName+'\',\''+res[index].idCourses+'\')">Go to Module</a></li>';
                                  content+='<li><span class="course-subTag" onclick="javascript:preTestforCourse(\''+res[index].courseName+'\',\''+res[index].idCourses+'\',\'Assessment\' )">Go for Assessment</a></li>';
                                 // content+='<li><span class="course-subTag" onclick="javascript:CourseTesting(\'postTest\' )">Go for Post-Test</a></li>';
                                  content+='</ul>';
