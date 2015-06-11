@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2015 at 11:48 AM
+-- Generation Time: Jun 11, 2015 at 05:10 AM
 -- Server version: 5.5.20
 -- PHP Version: 5.5.12
 
@@ -147,19 +147,19 @@ CREATE TABLE IF NOT EXISTS `testdetails` (
 --
 
 INSERT INTO `testdetails` (`idTestDetails`, `testName`, `testType`, `testTime`, `totalquestions`, `totalmarks`, `passMarks`) VALUES
-(1, 'Natural Resources Management', 'Pre Test', '00:10:59', 6, 20, 10),
-(2, 'Community/Individual Assets', 'Pre Test', '00:10:00', 5, 20, 0),
-(3, 'Common Infrastructure', 'Pre Test', '00:10:00', 5, 20, 0),
-(4, 'Rural Infrastructure', 'Pre Test', '00:10:00', 5, 20, 0),
-(6, 'Natural Resources Management', 'Assessment', '00:10:59', 8, 20, 10),
-(7, 'Community/Individual Assets', 'Assessment', '00:10:59', 5, 20, 10),
-(8, 'Common Infrastructure', 'Assessment', '00:10:59', 5, 20, 10),
-(9, 'Rural Infrastructure', 'Assessment', '00:10:59', 5, 20, 10),
-(10, 'All', 'Final Test', '00:10:59', 8, 20, 10),
-(11, 'Natural Resources Management', 'Post Test', '00:10:59', 8, 20, 10),
-(12, 'Community/Individual Assets', 'Post Test', '00:10:59', 8, 20, 10),
-(13, 'Common Infrastructure', 'Post Test', '00:10:59', 8, 20, 10),
-(14, 'Rural Infrastructure', 'Post Test', '00:10:59', 8, 20, 10);
+(1, 'Natural Resources Management', 'Pre Test', '00:20:00', 10, 50, 25),
+(2, 'Community/Individual Assets', 'Pre Test', '00:10:00', 10, 50, 25),
+(3, 'Common Infrastructure', 'Pre Test', '00:10:00', 10, 50, 25),
+(4, 'Rural Infrastructure', 'Pre Test', '00:10:00', 10, 50, 25),
+(6, 'Natural Resources Management', 'Assessment', '00:45:00', 20, 100, 60),
+(7, 'Community/Individual Assets', 'Assessment', '00:10:59', 20, 100, 60),
+(8, 'Common Infrastructure', 'Assessment', '00:10:59', 20, 100, 60),
+(9, 'Rural Infrastructure', 'Assessment', '00:10:59', 20, 100, 60),
+(10, 'All', 'Final Test', '00:10:59', 10, 50, 25),
+(11, 'Natural Resources Management', 'Post Test', '00:10:59', 10, 50, 25),
+(12, 'Community/Individual Assets', 'Post Test', '00:10:59', 10, 50, 25),
+(13, 'Common Infrastructure', 'Post Test', '00:10:59', 10, 50, 25),
+(14, 'Rural Infrastructure', 'Post Test', '00:10:59', 10, 50, 25);
 
 -- --------------------------------------------------------
 
