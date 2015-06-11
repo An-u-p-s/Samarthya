@@ -49,15 +49,21 @@ if($action=='GetQuestions')
     $jsonbuilder="[";
      for($ind=0;$ind<count($dejson);$ind++)
      {
+         $testId=str_replace("%0A","",$dejson[$ind]->{'idTestQuestions'});
+         $question=str_replace("%0A","",$dejson[$ind]->{'question'});
+         $option1=str_replace("%0A","",$dejson[$ind]->{'option1'});
+         $option2=str_replace("%0A","",$dejson[$ind]->{'option2'});
+         $option3=str_replace("%0A","",$dejson[$ind]->{'option3'});
+         $option4=str_replace("%0A","",$dejson[$ind]->{'option4'});
          
          
          $jsonbuilder.="{";
-         $jsonbuilder.="\"idTestQuestions\":"."\"".chop(urldecode($dejson[$ind]->{'idTestQuestions'})," ")."\",";
-         $jsonbuilder.="\"question\":"."\"".chop(urldecode($dejson[$ind]->{'question'})," ")."\",";
-         $jsonbuilder.="\"option1\":"."\"".chop(urldecode($dejson[$ind]->{'option1'})," ")."\",";
-         $jsonbuilder.="\"option2\":"."\"".chop(urldecode($dejson[$ind]->{'option2'})," ")."\",";
-         $jsonbuilder.="\"option3\":"."\"".chop(urldecode($dejson[$ind]->{'option3'})," ")."\",";
-         $jsonbuilder.="\"option4\":"."\"".chop(urldecode($dejson[$ind]->{'option4'})," ")."\"";
+         $jsonbuilder.="\"idTestQuestions\":"."\"".chop(urldecode($testId)," ")."\",";
+         $jsonbuilder.="\"question\":"."\"".chop(urldecode($question)," ")."\",";
+         $jsonbuilder.="\"option1\":"."\"".chop(urldecode($option1)," ")."\",";
+         $jsonbuilder.="\"option2\":"."\"".chop(urldecode($option2)," ")."\",";
+         $jsonbuilder.="\"option3\":"."\"".chop(urldecode($option3)," ")."\",";
+         $jsonbuilder.="\"option4\":"."\"".chop(urldecode($option4)," ")."\"";
          $jsonbuilder.="},";
      }
     
