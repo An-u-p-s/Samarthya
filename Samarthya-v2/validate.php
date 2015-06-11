@@ -13,17 +13,37 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="icon" href="">
     <title>::Samarthya::Online Learning Portal for Technical Staff under MGNREGA</title>
-
-    <!-- Bootstrap -->
+<script src="js/jquery-1.11.1.min.js"></script>
+    <link href="css/jquery.dataTables.css"/>
+    <script src="js/jquery.dataTables.min.js"></script>
+     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+    <!--link href="https://www.datatables.net/release-datatables/media/css/jquery.dataTables.css"-->
+    <link href="media/css/TableTools.css">
+    <style>
+        thead{
+            background-color: #0075b0;
+            color:#fff;
+        }
+        </style>
+    <script type="text/javascript">
+       function pageOnload()
+       {
+            var  table=$('#adminviewuserdetails').dataTable( {
+		        
+			 "columns": [{ "title": "Username" , "class": "center"},
+				     { "title": "Course Name",  "class": "center" },
+                                     { "title": "Pre-Test Marks" , "class": "center"},
+                                     { "title": "Assessment Marks" , "class": "center"},
+			             { "title": "Post-TestMarks",  "class": "center" },
+                                     { "title": "Validate", "class": "center" }
+                                    ] 
+				 } );
+         }
+    </script>
   </head>
-<body>
+  <body onload="pageOnload()">
 <div class="container page-wrapper">
 
 <!--   ----------------------  Start  Header Content -----------------------    -->
@@ -47,7 +67,7 @@
       </div>
      <!-- NAVIGATION BAR -->
             <!-- Start Navigation -->
-            <?php $page='';
+            <?php $page='ValidateCertificate';
             include 'templates/Navigation.php';?>
             <!-- End Navigation -->
    </div>
@@ -66,44 +86,8 @@
 </div>
 <div class="container">
 <div class="col-xs-12">
-<div class="panel panel-default">
-<table class="table table-responsiv table-bordered">
-<thead>
-<tr>
-<th>User ID</th>
-<th>Course Name</th>
-<th>Course</th>
-<th>Type of Test</th>
-<th>Marks</th>
-<th>Validate</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>002</td>
-<td>Farm Pond</td>
-<td>Farm Pond</td>
-<td>Post Test</td>
-<td>60</td>
-<td>Yes</td>
-</tr>
-<tr class="info">
-<td>001</td>
-<td>Deep Ploughing</td>
-<td>Deep Ploughing</td>
-<td>Post Test</td>
-<td>70</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>003</td>
-<td>Deep Ploughing</td>
-<td>Deep Ploughing</td>
-<td>Pre Test</td>
-<td>65</td>
-<td>Yes</td>
-</tr>
-</tbody>
+<table id="adminviewuserdetails" class="table table-responsiv table-bordered">
+        
 </table>
 </div>
 <p>"Mahatma Gandhi National Rural Employment Guarantee Act aims at enhancing the livelihood security of people in rural areas by guaranteeing hundred days of wage employment in a financial year to a rural household whose adult members volunteer to do unskilled manual work" © 2015 NIRD Inc. All rights reserved. "Mahatma Gandhi National Rural Employment Guarantee Act aims at enhancing the livelihood security of people in rural areas by guaranteeing hundred days of wage employment in a financial year to a rural household whose adult members volunteer to do unskilled manual work"</p>
@@ -151,7 +135,6 @@
 <!--   ---------------------- End Footer Page Content -----------------------    -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 </body>

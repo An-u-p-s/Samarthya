@@ -164,7 +164,8 @@ and open the template in the editor.
                                         <?php } else { ?>
                                               <li><a href="admin-test-results.php">User Test Results</a></li>
                                         <?php } ?>
-                                                
+                                               
+                                         
                        <?php } else { ?>
                                          
                                         <!-- Page : UserLanding Page -->
@@ -187,18 +188,23 @@ and open the template in the editor.
                                         
                                              <!-- Page : Manage Courses -->
                                              <?php   if($page=="ManageCourses") {?>
-                                                    <li class="active"><a href="manage-courses.php">Manage Courses</a></li>
+                                                    <!--li class="active"><a href="manage-courses.php">Manage Courses</a></li-->
                                              <?php } else { ?>
-                                                    <li><a href="manage-courses.php">Manage Courses</a></li>
+                                                    <!--li><a href="manage-courses.php">Manage Courses</a></li-->
                                              <?php } ?>
                                                     
                                               <!-- Page : Manage Tests -->  
                                               <?php   if($page=="ManageTest") {?>
-                                                    <li class="active"><a href="manage-onlinetest.php">Manage Tests</a></li>
+                                                    <!--li class="active"><a href="manage-onlinetest.php">Manage Tests</a></li-->
                                               <?php } else { ?>
-                                                    <li><a href="manage-onlinetest.php">Manage Tests</a></li>
+                                                    <!--li><a href="manage-onlinetest.php">Manage Tests</a></li-->
                                               <?php } ?>
-                                                        
+                                                
+                                        <?php   if($page=="ValidateCertificate") {?>
+                                              <li class="active"><a href="validate.php">Validate Certification</a></li>
+                                        <?php } else { ?>
+                                              <li><a href="validate.php">Validate Certification</a></li>
+                                        <?php } ?>
                         <?php } else {?>
                                            <!-- Page : Visited Courses --> 
                                             <?php   if($page=="VisitedCourses") {?>

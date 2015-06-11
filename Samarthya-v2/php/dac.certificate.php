@@ -14,7 +14,7 @@ class PDF extends FPDF
         $this->Image('../images/samarthya-logo.jpg',10,6,30);
         // Arial bold 15
         $this->SetFont('Arial','B',15);
-        $this->Ln(8);
+        $this->Ln(15);
         // Move to the right
       //  $this->Cell(80);
         // Title
@@ -36,7 +36,7 @@ class PDF extends FPDF
 }
 
 // Instanciation of inherited class
-$pdf = new PDF();
+$pdf = new PDF('P','mm',array(200,300));
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','I',14);

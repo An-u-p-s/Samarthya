@@ -49,10 +49,10 @@
                              content+='<thead>';
                              content+='<tr>';
                              content+='<th>Name</th>';
-                             content+='<th>Examination</th>';
+                             content+='<th>Course Name</th>';
                              content+='<th>Type of Test</th>';
                              content+='<th>Date of Examination</th>';
-                             content+='<th>Questions</th>';
+                           //  content+='<th>Questions</th>';
                              content+='<th>Marks</th>';
                              content+='<th>Status</th>';
                              content+='</tr>';
@@ -69,7 +69,7 @@
                content+='<td>'+res[index].courseName+'</td>';   
                content+='<td>'+res[index].testType+'</td>';
                content+='<td>'+res[index].ExamDate+'</td>';
-               content+='<td>'+res[index].questionResults+'</td>';  
+             //  content+='<td>'+res[index].questionResults+'</td>';  
                content+='<td>'+res[index].marksResults+'</td>'; 
                content+='<td>'+res[index].ExamStatus+'</td>'; 
                
