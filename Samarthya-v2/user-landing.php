@@ -137,7 +137,7 @@
           
           if(progress===true)
           {
-              document.getElementById("certificateButton").style.display='block';
+            //  document.getElementById("certificateButton").style.display='block';
           }
           
           
@@ -590,9 +590,9 @@
 
     </div>
       <br/>
-      <a href="finalTest.php">
+      <!--a href="finalTest.php">
         <input type="submit"  id="certificateButton" class="btn btn-default pull-right" value=" Go for Final Test "/> 
-      </a>
+      </a-->
       <br/>
       <br/>
 <!--   ---------------------- Start Details Page video Content -----------------------    -->
